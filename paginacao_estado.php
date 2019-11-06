@@ -4,6 +4,11 @@
 	
 	$sql = "SELECT COUNT(*) AS qtd FROM estado";
 	
+	if(!empty($_POST)){
+		$nome = $_POST["nome_filtro"];
+		$sql.= " WHERE nome_estado LIKE '%$nome%'";
+	}
+	
 	$resultado = mysqli_query($conexao,$sql) or die ("Erro." . mysqli_query($conexao));
 	
 	$linha = mysqli_fetch_assoc($resultado);

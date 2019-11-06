@@ -2,7 +2,7 @@
 	
 	include("conexao.php");
 	
-	$nome_estado = $_POST["estado"];
+	$nome_estado = $_POST["nome"];
 	$uf = $_POST["uf"];
 	
 	$insercao = "INSERT INTO estado (nome_estado, uf)
